@@ -7,21 +7,24 @@ public class MergeSort {
 	private static int[] aux;
 	
 	public static void sort(int[] a , int lo , int hi){
-		System.out.println("sort "+lo+" "+hi);
 		
-		if(lo>=hi)
-			return;
+		
+		if(lo>=hi){
+			System.out.println("stop sort lo:"+lo+" "+hi);
+			return;}
 		
 		int mid = (lo + hi)/2;
-		
+		System.out.println("sort left:"+lo+" "+mid);
 		sort( a, lo, mid);
+		System.out.println("sort right:"+mid+" "+hi);
 		sort( a, mid+1, hi);
+		System.out.println("merge sort:"+lo+" "+mid+" "+hi);
 		merge( a, lo, mid, hi);
 	}
 	
 	public static void merge(int[] a, int lo, int mid, int hi){
 		
-		System.out.println("merge "+a[lo]+" "+a[hi]);
+		System.out.println("merge "+lo+" "+hi);
 		
 		aux = new int[a.length];
 		
